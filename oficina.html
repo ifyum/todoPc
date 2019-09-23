@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<head>
+
+<script>
+    /**
+    * Array con las imagenes que se iran mostrando en la web
+    */
+    var imagenes=new Array(
+        'imagenes/oficina.jpg',
+        'imagenes/tienda1.jpg',
+        'imagenes/tienda2.jpg',
+        'imagenes/tienda3.jpg'
+    );
+
+    /**
+    * Funcion para cambiar la imagen
+    */
+  var x=0;
+setInterval(function () {
+
+
+// cambiamos la imagen de manera sucesiva
+
+document.getElementById("imagen").src=imagenes[x++%imagenes.length];
+
+},3000);
+
+    /**
+    * Función que se ejecuta una vez cargada la página
+    */
+    onload=function()
+    {
+        // Cargo una imagen aleatoria
+        rotarImagenes();
+
+        //  cada 2 segundos cambie la imagen
+        setInterval(rotarImagenes,2000);
+    }
+</script>
+</head>
+
+<body>
+
+<img src="imagenes/oficina.jpg" id="imagen" width="750" height="560" >
+
+
+</html>
